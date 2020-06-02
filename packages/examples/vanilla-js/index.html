@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode</title>
+  <style>
+    html[color-scheme=light] {
+      --bg: white;
+      --text: black;
+    }
+    html[color-scheme=dark] {
+      --bg: black;
+      --text: white;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+  </style>
+  <script src="../../color-scheme/color-scheme.min.js"></script>
+  <script>colorScheme()</script>
+</head>
+<body>
+  <button id="button">Theme Switcher</button>
+  <script>
+    const button = document.getElementById('button');
+    const buttonTexts = {
+      light: 'Dark Mode',
+      dark: 'Light Mode',
+    };
+    button.innerHTML = buttonTexts[colorScheme.get()];
+    button.addEventListener('click', colorScheme.next);
+
+    window.addEventListener('color-scheme', (event) => {
+      const { theme } = event.detail;
+      button.innerHTML = buttonTexts[colorScheme.get()];
+    })
+  </script>
+</body>
+</html>
