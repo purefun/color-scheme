@@ -1,3 +1,0 @@
-# @purefun/color-scheme
-
-> TODO
