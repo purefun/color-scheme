@@ -1,6 +1,6 @@
 {
-  "name": "@purefun/color-scheme",
-  "version": "0.1.4",
+  "name": "purefun-color-scheme",
+  "version": "0.1.5",
   "description": "Basic prefer-color-scheme.",
   "main": "dist/index.js",
   "scripts": {
